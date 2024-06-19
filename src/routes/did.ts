@@ -1,3 +1,4 @@
+import { DIDLog } from '../interfaces';
 import { resolveDID } from '../method';
 
 export const getLatestDIDDoc = async ({params: {id}, set}: {params: {id: string;}; set: any;}) => {
