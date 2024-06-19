@@ -1,4 +1,4 @@
-interface DIDDoc {
+export interface DIDDoc {
   id?: string;
   controller?: string | string[];
   alsoKnownAs?: string[];
@@ -11,13 +11,13 @@ interface DIDDoc {
   service?: ServiceEndpoint[];
 }
 
-interface DIDOperation {
+export interface DIDOperation {
   op: string;
   path: string;
   value: any;
 }
 
-type DIDLogEntry = [
+export type DIDLogEntry = [
   logEntryHash: string,
   versionId: number,
   timestamp: string,
@@ -31,15 +31,15 @@ type DIDLogEntry = [
   data: {value: any} | {patch: DIDOperation[]},
   proof?: any
 ];
-type DIDLog = DIDLogEntry[];
+export type DIDLog = DIDLogEntry[];
 
-interface ServiceEndpoint {
+export interface ServiceEndpoint {
   id?: string;
   type: string | string[];
   serviceEndpoint?: string | string[] | any;
 }
 
-interface VerificationMethod {
+export interface VerificationMethod {
   id?: string;
   type: 'authentication' | 'assertionMethod' | 'keyAgreement' | 'capabilityInvocation' | 'capabilityDelegation';
   controller?: string;
@@ -49,7 +49,7 @@ interface VerificationMethod {
   use?: string;
 }
 
-interface CreateDIDInterface {
+export interface CreateDIDInterface {
   domain: string;
   updateKeys: string[];
   signer: (doc: any, challenge: string) => Promise<{proof: any}>;
@@ -61,13 +61,13 @@ interface CreateDIDInterface {
   nextKeyHashes?: string[];
 }
 
-interface SignDIDDocInterface {
+export interface SignDIDDocInterface {
   document: any;
   proof: any;
   verificationMethod: VerificationMethod
 }
 
-interface UpdateDIDInterface {
+export interface UpdateDIDInterface {
   log: DIDLog;
   signer: (doc: any, challenge: string) => Promise<{proof: any}>;
   updateKeys?: string[];
@@ -83,7 +83,7 @@ interface UpdateDIDInterface {
   nextKeyHashes?: string[];
 }
 
-interface DeactivateDIDInterface {
+export interface DeactivateDIDInterface {
   log: DIDLog;
   signer: (doc: any, challenge: string) => Promise<{proof: any}>;
 }

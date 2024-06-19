@@ -2,6 +2,7 @@ import * as jsonpatch from 'fast-json-patch/index.mjs';
 import { clone, createDate, createDIDDoc, createSCID, createVMID, deriveHash, normalizeVMs } from "./utils";
 import { BASE_CONTEXT, METHOD, PLACEHOLDER, PROTOCOL } from './constants';
 import { documentStateIsValid, newKeysAreValid } from './assertions';
+import { CreateDIDInterface, DeactivateDIDInterface, DIDLog, DIDLogEntry, UpdateDIDInterface } from './interfaces';
 
 
 export const createDID = async (options: CreateDIDInterface): Promise<{did: string, doc: any, meta: any, log: DIDLog}> => {

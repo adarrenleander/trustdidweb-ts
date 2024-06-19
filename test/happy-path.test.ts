@@ -5,6 +5,7 @@ import { readLogFromDisk, readKeysFromDisk } from "./utils";
 import { createVMID, deriveHash } from "../src/utils";
 import { METHOD } from "../src/constants";
 import { createSigner } from "../src/signing";
+import { DIDLog, VerificationMethod } from "../src/interfaces";
 
 let docFile: string, logFile: string;
 let did: string;

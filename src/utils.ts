@@ -2,6 +2,7 @@ import base32 from 'base32';
 import { canonicalize } from 'json-canonicalize';
 import { createHash } from 'node:crypto';
 import { nanoid } from 'nanoid';
+import { CreateDIDInterface, DIDDoc, VerificationMethod } from './interfaces';
 
 export const clone = (input: any) => JSON.parse(JSON.stringify(input));
 

@@ -1,6 +1,6 @@
 {
   "name": "trustdidweb-ts",
-  "module": "src/index.ts",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "server": "bun --watch ./src/resolver.ts",

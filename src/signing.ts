@@ -3,6 +3,7 @@ import { bytesToHex, createDate } from "./utils";
 import { base58btc } from "multiformats/bases/base58"
 import { canonicalize } from 'json-canonicalize';
 import { createHash } from 'node:crypto';
+import { VerificationMethod } from './interfaces';
 
 export const createSigner = (vm: VerificationMethod) => {
   return async (doc: any, challenge: string) => {

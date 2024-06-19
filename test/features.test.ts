@@ -3,6 +3,7 @@ import { readKeysFromDisk, readLogFromDisk, writeLogToDisk } from "./utils";
 import { createDID, resolveDID, updateDID } from "../src/method";
 import { createSigner } from "../src/signing";
 import { deriveHash } from "../src/utils";
+import { DIDLog, VerificationMethod } from "../src/interfaces";
 
 let availableKeys: { ed25519: (VerificationMethod | null)[]; x25519: (VerificationMethod | null)[]};
 let log: DIDLog;
